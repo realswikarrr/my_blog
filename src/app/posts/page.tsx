@@ -1,7 +1,14 @@
+import NewPosts from "../components/NewPosts";
+
 export default function Posts() {
   return (
     <div>
-      <h1>Posts</h1>
+      <NewPosts />
+      <NewPosts />
+      <NewPosts />
+      <NewPosts />
+      <NewPosts />
+      <NewPosts />
     </div>
   );
 }
