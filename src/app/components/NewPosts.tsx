@@ -1,11 +1,15 @@
+import Link from "next/link";
+
 export default function NewPosts() {
   return (
     <div>
       {/* Title and Date */}
       <div className="flex  gap-5 mt-10">
-        <h1 className=" border-b-2 hover:border-red-500 border-blue-500 cursor-pointer">
-          How Youtube Damaged My Interest&apos;s
-        </h1>{" "}
+        <Link href="/post/how-youtube-damaged-my-interest">
+          <h1 className=" border-b-2 hover:border-red-500 border-blue-500 cursor-pointer">
+            How Youtube Damaged My Interest&apos;s
+          </h1>
+        </Link>
         <p className="text-zinc-400">March,29,2024</p>
       </div>
       {/* Description */}
