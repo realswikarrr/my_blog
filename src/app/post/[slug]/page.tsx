@@ -2,13 +2,6 @@ import getPostContent from "@/app/util/getPostContent";
 import getPostMetadata from "@/app/util/getPostMetadata";
 import Markdown from "markdown-to-jsx";
 
-export const generateStaticParams = async () => {
-  const posts = getPostMetadata();
-  return posts.map((post) => {
-    slug: post.slug;
-  });
-};
-
 export default function Page({ params }: { params: { slug: string } }) {
   console.log(params.slug);
   const post = getPostContent(params.slug);
