@@ -4,7 +4,7 @@ import fs from "fs";
 import matter from "gray-matter";
 
 const getPostContent = (slug: string) => {
-  const folder = "public/blogs/";
+  const folder = "blogs/";
   const file = `${folder}${slug}.md`;
 
   try {
@@ -19,10 +19,10 @@ const getPostContent = (slug: string) => {
 
 export const generateStaticParams = async () => {
   const posts = getPostMetadata();
-
-  return posts.map((post) => {
-    slug: post.slug;
-  });
+  console.log(posts);
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 };
 
 export default function Page(props: any) {
