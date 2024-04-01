@@ -1,3 +1,5 @@
+"use client";
+
 import getPostContent from "@/app/util/getPostContent";
 import getPostMetadata from "@/app/util/getPostMetadata";
 import Markdown from "markdown-to-jsx";
