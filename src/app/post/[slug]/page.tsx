@@ -1,3 +1,5 @@
+"use client";
+
 import getPostContent from "@/app/util/getPostContent";
 import getPostMetadata from "@/app/util/getPostMetadata";
 import Markdown from "markdown-to-jsx";
@@ -10,6 +12,7 @@ export const generateStaticParams = async () => {
 };
 
 export default function Page({ params }: { params: { slug: string } }) {
+  console.log(params.slug);
   const post = getPostContent(params.slug);
   return (
     <div className="mt-10">
