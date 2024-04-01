@@ -1,9 +1,32 @@
-import getPostContent from "@/app/util/getPostContent";
 import getPostMetadata from "@/app/util/getPostMetadata";
 import Markdown from "markdown-to-jsx";
+import fs from "fs";
+import matter from "gray-matter";
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const post = getPostContent(params.slug);
+const getPostContent = (slug: string) => {
+  const folder = "public/blogs/";
+  const file = `${folder}${slug}.md`;
+
+  try {
+    const content = fs.readFileSync(file, "utf-8");
+    const matterResult = matter(content);
+    return matterResult;
+  } catch (error) {
+    console.error(`Error reading file ${file}: ${error}`);
+    return null; // Or handle the error as needed
+  }
+};
+
+export const generateStaticParams = async () => {
+  const posts = getPostMetadata();
+
+  return posts.map((post) => {
+    slug: post.slug;
+  });
+};
+
+export default function Page(props: any) {
+  const post = getPostContent(props.params.slug);
 
   console.log(post);
 
