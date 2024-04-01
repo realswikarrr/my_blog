@@ -1,5 +1,5 @@
 import { Inconsolata } from "next/font/google";
-import RecentPost from "./RecentPost";
+import RecentPosts from "./RecentPosts";
 
 const edu_nsw = Inconsolata({ subsets: ["latin"] });
 
@@ -21,8 +21,7 @@ export default function HomePage() {
             My Recent Post&apos;s
           </h1>
 
-          {/* Recent Post Section */}
-          <RecentPost />
+          <RecentPosts />
         </main>
       </div>
     </div>

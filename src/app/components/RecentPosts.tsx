@@ -1,13 +1,18 @@
 import Link from "next/link";
 import getPostMetadata from "../util/getPostMetadata";
 
-export default function RecentPost() {
+export default function RecentPosts() {
   const recentPost = getPostMetadata();
-  console.log(recentPost);
+
+  let newRecentPosts = [];
+
+  newRecentPosts.push(recentPost[recentPost.length - 1]);
+  newRecentPosts.push(recentPost[recentPost.length - 2]);
+  newRecentPosts.push(recentPost[recentPost.length - 3]);
 
   return (
     <div>
-      {recentPost.map((post) => (
+      {newRecentPosts.map((post) => (
         <div key={post.slug}>
           {/* Title and Date */}
           <div className="flex  gap-5 mt-10">
