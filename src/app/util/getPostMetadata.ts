@@ -3,12 +3,12 @@ import matter from "gray-matter";
 import { PostMetadata } from "../types/PostMetadata";
 
 const getPostMetadata = (): PostMetadata[] => {
-  const folder = "blogs/";
+  const folder = `src/app/blogs/`;
   const files = fs.readdirSync(folder);
   const markdownPosts = files.filter((file) => file.endsWith(".md"));
 
   const posts = markdownPosts.map((fileName) => {
-    const fileContents = fs.readFileSync(`blogs/${fileName}`, "utf-8");
+    const fileContents = fs.readFileSync(`src/app/blogs/${fileName}`, "utf-8");
     const matterResult = matter(fileContents);
     return {
       title: matterResult.data.title,
