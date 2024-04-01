@@ -5,8 +5,6 @@ import Markdown from "markdown-to-jsx";
 export default function Page({ params }: { params: { slug: string } }) {
   const post = getPostContent(params.slug);
 
-  console.log(post);
-
   if (post) {
     return (
       <div className="mt-10">

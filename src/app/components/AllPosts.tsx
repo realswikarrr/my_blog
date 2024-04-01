@@ -10,7 +10,7 @@ export default function AllPosts() {
         <div key={post.slug}>
           {/* Title and Date */}
           <div className="flex  gap-5 mt-10">
-            <Link href={`/post/${post.slug}`}>
+            <Link href={`post/${post.slug}`}>
               <h1 className=" border-b-2 hover:border-red-500 border-blue-500 cursor-pointer">
                 {post.title}
               </h1>{" "}
