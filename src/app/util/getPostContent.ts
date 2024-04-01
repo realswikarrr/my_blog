@@ -2,7 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 
 const getPostContent = (slug: string) => {
-  const folder = "posts/";
+  const folder = "blogs/";
   const file = `${folder}${slug}.md`;
 
   try {
